@@ -1,5 +1,3 @@
-// src/components/session/signup_form.js
-
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -15,7 +13,7 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        this.clearErrors = false;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -23,13 +21,14 @@ class SignupForm extends React.Component {
             this.props.history.push('/login');
         }
 
-        this.setState({ errors: nextProps.errors })
+        this.setState({ errors: nextProps.errors });
     }
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return (e) =>
+            this.setState({
+                [field]: e.currentTarget.value
+            });
     }
 
     handleSubmit(e) {
@@ -40,7 +39,6 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-
         this.props.signup(user, this.props.history);
     }
 
@@ -48,9 +46,7 @@ class SignupForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
+                    <li key={`error-${i}`}>{this.state.errors[error]}</li>
                 ))}
             </ul>
         );
@@ -58,29 +54,33 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
+            <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
+                    <div className="login-form">
                         <br />
-                        <input type="text"
+                        <input
+                            type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
                         <br />
-                        <input type="text"
+                        <input
+                            type="text"
                             value={this.state.handle}
                             onChange={this.update('handle')}
                             placeholder="Handle"
                         />
                         <br />
-                        <input type="password"
+                        <input
+                            type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
                         <br />
-                        <input type="password"
+                        <input
+                            type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"

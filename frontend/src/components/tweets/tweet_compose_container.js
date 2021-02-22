@@ -1,4 +1,4 @@
-// src/components/tweets/tweet_compose_container.js
+
 
 import { connect } from 'react-redux';
 import { composeTweet } from '../../actions/tweet_actions';
@@ -11,9 +11,9 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        composeTweet: data => dispatch(composeTweet(data))
+        composeTweet: (data) => dispatch(composeTweet(data))
     };
 };
 

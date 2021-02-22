@@ -1,9 +1,6 @@
-// src/util/session_api_util.js
-
 import axios from 'axios';
 
-// We've been using this method in previos steps
-export const setAuthToken = token => {
+export const setAuthToken = (token) => {
     if (token) {
         axios.defaults.headers.common['Authorization'] = token;
     } else {

@@ -1,5 +1,3 @@
-// src/components/tweets/tweet_box.js
-
 import React from 'react';
 
 class TweetBox extends React.Component {

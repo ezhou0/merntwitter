@@ -1,5 +1,3 @@
-// src/components/tweets/tweet_compose.js
-
 import React from 'react';
 import TweetBox from './tweet_box';
 
@@ -8,9 +6,9 @@ class TweetCompose extends React.Component {
         super(props);
 
         this.state = {
-            text: "",
-            newTweet: ""
-        }
+            text: '',
+            newTweet: ''
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,13 +24,14 @@ class TweetCompose extends React.Component {
         };
 
         this.props.composeTweet(tweet);
-        this.setState({ text: '' })
+        this.setState({ text: '' });
     }
 
     update() {
-        return e => this.setState({
-            text: e.currentTarget.value
-        });
+        return (e) =>
+            this.setState({
+                text: e.currentTarget.value
+            });
     }
 
     render() {
@@ -40,7 +39,8 @@ class TweetCompose extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <input type="textarea"
+                        <input
+                            type="textarea"
                             value={this.state.text}
                             onChange={this.update()}
                             placeholder="Write your tweet..."
@@ -51,7 +51,7 @@ class TweetCompose extends React.Component {
                 <br />
                 <TweetBox text={this.state.newTweet} />
             </div>
-        )
+        );
     }
 }
 

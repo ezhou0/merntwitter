@@ -1,16 +1,11 @@
-// src/components/main/main_page.js
-
 import React from 'react';
 
 class MainPage extends React.Component {
-
     render() {
         return (
             <div>
-                <h1>A Twitter Clone</h1>
-                <footer>
-                    Copyright &copy; 2019 Chirper
-        </footer>
+                <p>A Twitter Clone</p>
+                <footer>Copyright &Copyright 2021 Chirper</footer>
             </div>
         );
     }

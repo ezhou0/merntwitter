@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-// import './navbar.css'
+import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -14,7 +14,6 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
-    // Selectively render links dependent on whether the user is logged in
     getLinks() {
         if (this.props.loggedIn) {
             return (
@@ -39,7 +38,7 @@ class NavBar extends React.Component {
         return (
             <div>
                 <h1>Chirper</h1>
-                { this.getLinks()}
+                {this.getLinks()}
             </div>
         );
     }
